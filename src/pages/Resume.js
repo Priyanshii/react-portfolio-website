@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Document, Page, pdfjs } from 'react-pdf';
-import pdf from '../assets/doc/Resume.pdf'
+import pdf from '../assets/doc/Resume.pdf';
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "react-pdf/dist/esm/Page/TextLayer.css";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
@@ -21,7 +21,7 @@ const Resume = () => {
           </DocumentRender>
         </FileContainer>
         <DownloadButton onClick={handleDownloadButton}>
-          Download Resume
+          <a href={pdf} download="Priyanshi_Maheshwari_Resume.pdf">Download Resume</a>
         </DownloadButton>
       </ResumeContainer>
     </>
@@ -45,22 +45,29 @@ const DocumentRender = styled(Document)`
   align-items: center;
   width: 100%;
   height: 100%;
+  padding: 3rem;
 `
 
 const DownloadButton = styled.button`
   background-color: transparent;
   padding: 15px 30px;
   margin-top: 40px;
-  font-size: 1.4rem;
-  font-weight: 500;
-  color: rgb(28, 54, 54);
   border:  2px solid rgb(28, 54, 54);
   cursor: pointer;
+  
+  a{
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: rgb(28, 54, 54);
+  }
 
   &:hover{
     background-color: rgb(28, 54, 54);
-    color: white;
-
+    
+    a{
+      color: white;
+    }
   }
 `
 export default Resume;

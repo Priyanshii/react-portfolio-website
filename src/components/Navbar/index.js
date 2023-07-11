@@ -1,10 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Link as LinkS } from 'react-scroll'
-import { Link as LinkR } from 'react-router-dom'
+import { NavLink as LinkR, useNavigate } from 'react-router-dom'
 import { FaBars } from "react-icons/fa"
+import * as Scroll from "react-scroll";
 
 const Navbar = ({ toggle }) => {
+
+  const navigate = useNavigate();
+  const scroller = Scroll.scroller;
+  const [activeLink, setActiveLink] = useState("");
+
+  const handleScrollLink = async(selector) => {
+    await navigate("/");
+    setActiveLink(selector);
+    scroller.scrollTo(selector, {
+      duration: 500,
+      smooth: true,
+      offset: -100,
+      spy: true
+    });
+  }
+
   return ( 
     <>
       <Nav>
@@ -17,16 +34,16 @@ const Navbar = ({ toggle }) => {
           </MobileIcon>
           <NavMenu>
             <NavItem>
-              <NavLinkScroll to="home">Home</NavLinkScroll>
+              <NavLinkScroll $active={activeLink === "home" ? true :  false} onClick={() => {handleScrollLink("home")}}>Home</NavLinkScroll>
             </NavItem>
             <NavItem>
-              <NavLinkScroll to="about">About</NavLinkScroll>
+              <NavLinkScroll $active={activeLink === "about" ? true : false} onClick={() => {handleScrollLink("about")}}>About</NavLinkScroll>
             </NavItem>
             <NavItem>
-              <NavLinkRouter to="/experience">Experience</NavLinkRouter>
+              <NavLinkRouter to="/experience" onClick={() => setActiveLink("")}>Experience</NavLinkRouter>
             </NavItem>
             <NavItem>
-              <NavLinkRouter to="/resume">Resume</NavLinkRouter>
+              <NavLinkRouter to="/resume" onClick={() => setActiveLink("")}>Resume</NavLinkRouter>
             </NavItem>
           </NavMenu>
         </NavbarContainer>
@@ -104,11 +121,14 @@ const NavItem = styled.li`
   height: 100%;
 `
 
-const NavLinkScroll = styled(LinkS)`
-  color: rgb(28, 54, 54);
+const NavLinkScroll = styled.button`
+  /* color: rgb(28, 54, 54); */
+  color: ${props => props.$active ? '#bb3459' : 'rgb(28,54,54)'};
   display: flex;
   align-items: center;
   text-decoration: none;
+  border: none;
+  background-color: transparent;
   padding: 0 1rem;
   font-size: 1rem;
   height: 100%;
@@ -117,6 +137,12 @@ const NavLinkScroll = styled(LinkS)`
   &:hover{
     color: #bb3459;
   }
+  /* &:active{
+    color: #bb3459;
+  }
+  &:focus{
+    color: #bb3459;
+  } */
 `
 
 const NavLinkRouter = styled(LinkR)`
@@ -132,7 +158,8 @@ const NavLinkRouter = styled(LinkR)`
   &:hover{
     color: #bb3459;
   }
-  &:active{
+
+  &.active{
     color: #bb3459;
   }
 `

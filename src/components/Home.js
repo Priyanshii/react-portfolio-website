@@ -42,7 +42,7 @@ const Home = () => {
 }
 
 const HomeContainer = styled.div`
-  padding: 6rem 6rem 4rem;
+  padding: 6rem 6rem 2rem;
   box-sizing: border-box;
   width: 100%;
   min-height: 100vh;
