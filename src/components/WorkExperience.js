@@ -18,23 +18,23 @@ const starIcon = {
   iconStyle: { background: '#bb3459', color: '#fff'},
 };
 
-  const timeline = [
-    {
-      icon: workIcon,
-      date: 'Jan 2019 - Oct 2019',
-      title: 'Software Developer',
-      subtitle: 'Thumbmunkeys Ltd.,Gurugram',
-      desc: ["C#", "Xamarin.iOS", ".NET"],
-    },
-    {
-      icon: workIcon,
-      date: 'Sep 2022 - Present',
-      title: 'Front End Developer',
-      subtitle: 'Deeporion Technology, Jaipur',
-      desc: ['JavaScript', 'React.Js', 'Redux', 'TypeScript', 'Responsive User Interfaces', 'Rest Api', 'Figma Designs'],
-    },
-    { icon: starIcon },
-  ];
+const timeline = [
+  {
+    icon: workIcon,
+    date: 'Jan 2019 - Oct 2019',
+    title: 'Software Developer',
+    subtitle: 'Thumbmunkeys Ltd.,Gurugram',
+    desc: ["C#", "Xamarin.iOS", ".NET"],
+  },
+  {
+    icon: workIcon,
+    date: 'Sep 2022 - Present',
+    title: 'Front End Developer',
+    subtitle: 'Deeporion Technology, Jaipur',
+    desc: ['JavaScript', 'React.Js', 'Redux', 'TypeScript', 'Responsive User Interfaces', 'Rest Api', 'Figma Designs'],
+  },
+  { icon: starIcon },
+];
 
 const WorkExperience = () => {
 
@@ -46,7 +46,8 @@ const WorkExperience = () => {
         </Heading>
         <MainContainer>
           <VerticalTimeline lineColor='rgb(42, 151, 139)' layout='2-columns'>
-            {timeline.map((t, i) => {
+            {
+            timeline.map((t, i) => {
               const contentStyle = i !== timeline.length-1 ? { border: '2px solid rgb(42, 151, 139)', color: 'rgb(28, 54, 54)' } : undefined;
               const arrowStyle = i!== timeline.length-1 ? { borderRight: '7px solid rgb(42, 151, 139)' } : undefined;
 
@@ -72,9 +73,9 @@ const WorkExperience = () => {
                       && 
                       <Tags>
                       {
-                      t.desc.map((item) => {
+                      t.desc.map((item, index) => {
                         return(
-                          <div>{item}</div>
+                          <div key={index}>{item}</div>
                           )
                         })
                       }

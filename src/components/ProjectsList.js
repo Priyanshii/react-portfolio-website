@@ -1,5 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
+import ProjectCard from './ProjectCard';
+
+const projectList = [
+  {
+    img: require('../assets/images/contact_app.png'),
+    demoLink: 'https://contact-management-app-phi.vercel.app/',
+    githubLink: 'https://github.com/Priyanshii/Contact-Management-App',
+  },
+];
 
 const ProjectsList = () => {
   return (
@@ -9,7 +18,13 @@ const ProjectsList = () => {
           Projects
         </Heading>
         <ProjectsListContainer>
-
+        {
+          projectList.map((card, index) => {
+            return(
+              <ProjectCard {...card} key={index}/>
+            )
+          })
+        }
         </ProjectsListContainer>
       </ProjectsContainer>
     </>
@@ -33,6 +48,12 @@ const Heading = styled.span`
 `
 
 const ProjectsListContainer = styled.div`
+  padding: 2rem 4rem 0rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
 `
 
 export default ProjectsList

@@ -5,6 +5,8 @@ import { IoLogoJavascript } from 'react-icons/io';
 import { FaNode } from 'react-icons/fa';
 import { SiTailwindcss, SiRedux, SiStyledcomponents, SiVisualstudiocode, SiPostman } from 'react-icons/si';
 import { DiHtml5, DiCss3, DiReact, DiNodejs, DiMongodb, DiPython, DiGit, DiBootstrap } from "react-icons/di";
+import { Tooltip } from 'react-tooltip'
+import 'react-tooltip/dist/react-tooltip.css'
 
 const TechnicalSkills = () => {
   return (
@@ -14,49 +16,64 @@ const TechnicalSkills = () => {
           Skillset
         </SkillSetHeading>
         <SkillsMenu>
-          <TechIcon>
+          <TechIcon data-tooltip-id="cplusplus" data-tooltip-content="C++" data-tooltip-place="bottom">
+            <ReactTooltipStyled id="cplusplus" />
             <CgCPlusPlus />
           </TechIcon>
-          <TechIcon>
+          <TechIcon data-tooltip-id="html" data-tooltip-content="HTML" data-tooltip-place="bottom">
+            <ReactTooltipStyled id="html" />
             <DiHtml5 />
           </TechIcon>
-          <TechIcon>
+          <TechIcon data-tooltip-id="css" data-tooltip-content="CSS" data-tooltip-place="bottom">
+            <ReactTooltipStyled id="css" />
             <DiCss3 />
           </TechIcon>
-          <TechIcon>
+          <TechIcon data-tooltip-id="javascript" data-tooltip-content="JavaScript" data-tooltip-place="bottom">
+            <ReactTooltipStyled id="javascript" />
             <IoLogoJavascript />
           </TechIcon>
-          <TechIcon>
+          <TechIcon data-tooltip-id="react" data-tooltip-content="React.JS" data-tooltip-place="bottom">
+            <ReactTooltipStyled id="react" />
             <DiReact />
           </TechIcon>
-          <TechIcon>
+          <TechIcon data-tooltip-id="redux" data-tooltip-content="Redux" data-tooltip-place="bottom">
+            <ReactTooltipStyled id="redux" />
             <SiRedux />
           </TechIcon>
-          <TechIcon>
+          <TechIcon data-tooltip-id="node" data-tooltip-content="Node.JS" data-tooltip-place="bottom">
+            <ReactTooltipStyled id="node" />
             <FaNode />
           </TechIcon>
-          <TechIcon>
+          <TechIcon data-tooltip-id="mongodb" data-tooltip-content="MongoDB" data-tooltip-place="bottom">
+            <ReactTooltipStyled id="mongodb" />
             <DiMongodb />
           </TechIcon>
-          <TechIcon>
+          <TechIcon data-tooltip-id="python" data-tooltip-content="Python" data-tooltip-place="bottom">
+            <ReactTooltipStyled id="python" />
             <DiPython />
           </TechIcon>
-          <TechIcon>
+          <TechIcon data-tooltip-id="tailwindcss" data-tooltip-content="TailwindCSS" data-tooltip-place="bottom">
+            <ReactTooltipStyled id="tailwindcss" />
             <SiTailwindcss />
           </TechIcon>
-          <TechIcon>
+          <TechIcon data-tooltip-id="styledcomponents" data-tooltip-content="Styled Components" data-tooltip-place="bottom">
+            <ReactTooltipStyled id="styledcomponents" />
             <SiStyledcomponents />
           </TechIcon>
-          <TechIcon>
+          <TechIcon data-tooltip-id="bootstrap" data-tooltip-content="Bootstrap" data-tooltip-place="bottom">
+            <ReactTooltipStyled id="bootstrap" />
             <DiBootstrap />
           </TechIcon>
-          <TechIcon>
+          <TechIcon data-tooltip-id="git" data-tooltip-content="Git" data-tooltip-place="bottom">
+            <ReactTooltipStyled id="git" />
             <DiGit />
           </TechIcon>
-          <TechIcon>
+          <TechIcon data-tooltip-id="visualStudio" data-tooltip-content="VS Code" data-tooltip-place="bottom">
+            <ReactTooltipStyled id="visualStudio" />
             <SiVisualstudiocode />
           </TechIcon>
-          <TechIcon>
+          <TechIcon data-tooltip-id="postman" data-tooltip-content="Postman" data-tooltip-place="bottom">
+            <ReactTooltipStyled id="postman" />
             <SiPostman />
           </TechIcon>
         </SkillsMenu>
@@ -102,8 +119,10 @@ const TechIcon = styled.div`
     height: auto;
   }
 `
-const Text = styled.span`
-  font-size: 1rem;
+const ReactTooltipStyled = styled(Tooltip)`
+  background-color: white;
+  color: rgb(28, 54, 54);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 `
 
 export default TechnicalSkills;

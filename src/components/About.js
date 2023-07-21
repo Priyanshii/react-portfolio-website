@@ -24,7 +24,10 @@ const About = () => {
               creating intuitive user interfaces that enhance user experiences.
             </Content>
             <ExtraInfo>
-              Email:  priyanshimaheshwari2015@gmail.com
+              Email :   
+              <EmailID onClick={() => {window.location.href ='mailto:priyanshimaheshwari2015@gmail.com';}}>
+              {` priyanshimaheshwari2015@gmail.com`}
+              </EmailID>
             </ExtraInfo>
           </ContentContainer>
         </IntroductionContainer>
@@ -95,6 +98,14 @@ const Content = styled.span`
 
 const ExtraInfo = styled.span`
   color: rgb(28, 54, 54);
+`
+
+const EmailID = styled.span`
+  cursor: pointer;
+
+  &:hover{
+    border-bottom: 1px solid rgb(28, 54, 54);
+  }
 `
 
 export default About

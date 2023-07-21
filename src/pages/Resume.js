@@ -8,10 +8,6 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/$
 
 const Resume = () => {
 
-  const handleDownloadButton = () => {
-
-  }
-
   return (
     <>
       <ResumeContainer>
@@ -20,8 +16,8 @@ const Resume = () => {
             <Page pageNumber={1}  />
           </DocumentRender>
         </FileContainer>
-        <DownloadButton onClick={handleDownloadButton}>
-          <a href={pdf} download="Priyanshi_Maheshwari_Resume.pdf">Download Resume</a>
+        <DownloadButton href={pdf} download="Priyanshi_Maheshwari_Resume.pdf">
+          Download Resume
         </DownloadButton>
       </ResumeContainer>
     </>
@@ -48,26 +44,20 @@ const DocumentRender = styled(Document)`
   padding: 3rem;
 `
 
-const DownloadButton = styled.button`
+const DownloadButton = styled.a`
   background-color: transparent;
-  padding: 15px 30px;
   margin-top: 40px;
   border:  2px solid rgb(28, 54, 54);
   cursor: pointer;
+  padding: 15px 30px;
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: rgb(28, 54, 54);
   
-  a{
-    text-decoration: none;
-    font-size: 1.4rem;
-    font-weight: 500;
-    color: rgb(28, 54, 54);
-  }
-
   &:hover{
     background-color: rgb(28, 54, 54);
-    
-    a{
-      color: white;
-    }
+    color: white;
   }
 `
 export default Resume;
