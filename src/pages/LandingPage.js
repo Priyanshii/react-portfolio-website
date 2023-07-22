@@ -17,6 +17,7 @@ const LandingPage = () => {
 const MainContainer = styled.div`
   height: auto;
   display: flex;
+  width: auto;
   flex-direction: column;
   margin-bottom: 2rem;
 `

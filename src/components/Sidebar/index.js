@@ -1,10 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
-import { Link as LinkS } from 'react-scroll'
-import { Link as LinkR } from 'react-router-dom'
+import { NavLink as LinkR, useNavigate } from 'react-router-dom'
 import { FaTimes } from 'react-icons/fa'
+import * as Scroll from "react-scroll";
 
 const Sidebar = ({ isOpen, toggle }) => {
+  const navigate = useNavigate();
+  const scroller = Scroll.scroller;
+  const [activeLink, setActiveLink] = useState("");
+
+  const handleScrollLink = async(selector) => {
+    await navigate("/");
+    setActiveLink(selector);
+    scroller.scrollTo(selector, {
+      duration: 500,
+      smooth: true,
+      offset: -100,
+      spy: true
+    });
+  }
+
+  const handleRouterLink = () => {
+    setActiveLink("")
+    toggle();
+  }
   return (
     <SidebarContainer isOpen={isOpen} onClick={toggle}>
       <Icon onClick={toggle}>
@@ -12,16 +31,16 @@ const Sidebar = ({ isOpen, toggle }) => {
       </Icon>
       <SidebarWrapper>
         <SidebarMenu>
-          <SidebarLinkScroll to="home" onClick={toggle}>
+          <SidebarLinkScroll $active={activeLink === "home" ? true :  false} onClick={() => {handleScrollLink("home")}}>
             Home
           </SidebarLinkScroll>
-          <SidebarLinkScroll to="about" onClick={toggle}>
+          <SidebarLinkScroll $active={activeLink === "about" ? true :  false} onClick={() => {handleScrollLink("about")}}>
             About
           </SidebarLinkScroll>
-          <SidebarLinkRouter to="/projects" onClick={toggle}>
-            Projects
+          <SidebarLinkRouter to="/experience" onClick={() => {handleRouterLink()}}>
+            Experience
           </SidebarLinkRouter>
-          <SidebarLinkRouter to="/resume" onClick={toggle}>
+          <SidebarLinkRouter to="/resume" onClick={() => {handleRouterLink()}}>
             Resume
           </SidebarLinkRouter>
         </SidebarMenu>
@@ -77,25 +96,27 @@ const SidebarMenu = styled.ul`
  }
 `
 
-const SidebarLinkScroll = styled(LinkS)`
-  color: #000;
+const SidebarLinkScroll = styled.button`
+  color: ${props => props.$active ? '#bb3459' : 'rgb(28,54,54)'};
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.5rem;
   text-decoration: none;
-  list-style: none;
+  border: none;
+  background-color: transparent;
+  padding: 0 1rem;
   transition: 0.2s ease-in-out;
   cursor: pointer;
 
   &:hover{
-    color: blue;
+    color: #bb3459;
     transition: 0.2s ease-in-out;
   }
 `
 
 const SidebarLinkRouter = styled(LinkR)`
-  color: #000;
+  color: rgb(28, 54, 54);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -106,7 +127,12 @@ const SidebarLinkRouter = styled(LinkR)`
   cursor: pointer;
 
   &:hover{
-    color: blue;
+    color: #bb3459;
+    transition: 0.2s ease-in-out;
+  }
+  
+  &.active{
+    color: #bb3459;
     transition: 0.2s ease-in-out;
   }
 `

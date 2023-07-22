@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { Link as LinkS } from 'react-scroll'
 import { NavLink as LinkR, useNavigate } from 'react-router-dom'
 import { FaBars } from "react-icons/fa"
 import * as Scroll from "react-scroll";
