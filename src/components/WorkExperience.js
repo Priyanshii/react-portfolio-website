@@ -31,7 +31,7 @@ const timeline = [
     date: 'Sep 2022 - Present',
     title: 'Front End Developer',
     subtitle: 'Deeporion Technology, Jaipur',
-    desc: ['JavaScript', 'React.Js', 'Redux', 'TypeScript', 'Responsive User Interfaces', 'Rest Api', 'Figma Designs'],
+    desc: ['JavaScript', 'React.Js', 'Redux', 'TypeScript', 'Responsive User Interfaces', 'Rest Api', 'Node.js', 'Express.js', 'MongoDb', 'Figma Designs'],
   },
   { icon: starIcon },
 ];

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Document, Page, pdfjs } from 'react-pdf';
-import pdf from '../assets/doc/Resume.pdf';
+import pdf from '../assets/doc/Resume_Priyanshi_Maheshwari.pdf';
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "react-pdf/dist/esm/Page/TextLayer.css";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;

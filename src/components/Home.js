@@ -4,6 +4,7 @@ import { AiFillLinkedin, AiFillGithub } from 'react-icons/ai'
 import { SiHackerrank } from 'react-icons/si'
 import { Link } from 'react-router-dom'
 import Programmer from '../assets/images/programmer.jpg'
+import Type from './Type'
 
 const Home = () => {
   return (
@@ -18,7 +19,7 @@ const Home = () => {
               Priyanshi Maheshwari
             </Name>
             <DesignationText>
-              Front End Developer
+              <Type />
             </DesignationText>
           </Introduction>
           <ProfileLinksMenu>

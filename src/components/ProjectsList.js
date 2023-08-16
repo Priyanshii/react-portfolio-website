@@ -4,10 +4,17 @@ import ProjectCard from './ProjectCard';
 
 const projectList = [
   {
+    img: require('../assets/images/BlogMern.png'),
+    demoLink: 'https://blog-app-mern-drab.vercel.app/',
+    githubLink: 'https://github.com/Priyanshii/Blog-App-Mern',
+    name: 'Advanced Blog Application using MERN'
+  },
+  {
     img: require('../assets/images/contact_app.png'),
     demoLink: 'https://contact-management-app-phi.vercel.app/',
     githubLink: 'https://github.com/Priyanshii/Contact-Management-App',
-  },
+    name: 'Contact Management App'
+  }
 ];
 
 const ProjectsList = () => {
@@ -53,7 +60,8 @@ const ProjectsListContainer = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  gap: 2rem;
+  gap: 4rem;
+  flex-wrap: wrap;
 `
 
 export default ProjectsList

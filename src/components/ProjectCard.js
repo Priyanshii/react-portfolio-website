@@ -1,13 +1,14 @@
 import React from 'react'
 import styled from 'styled-components';
 
-const ProjectCard = ({img, demoLink, githubLink }) => {
+const ProjectCard = ({img, demoLink, githubLink, name }) => {
   return (
     <>
       <CardContainer>
         <ImageContainer>
           <img src={img} alt="" />
         </ImageContainer>
+        <NameContainer>{name}</NameContainer>
         <LinkContainer>
           <a href={demoLink} target='_blank'>Demo Link</a>
           <a href={githubLink} target='_blank'>Github Link</a>
@@ -26,7 +27,17 @@ const ImageContainer = styled.div`
     width: 400px;
     height: auto;
     object-fit: contain;
+    border-bottom: 1px solid #e1dcdc;
   }
+`
+
+const NameContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: medium;
+  margin-top: 20px;
+  color: rgb(28, 54, 54);
 `
 
 const LinkContainer = styled.div`
@@ -45,7 +56,7 @@ const LinkContainer = styled.div`
     text-decoration: none;
     font-size: 1rem;
     font-weight: 500;
-    color: rgb(28, 54, 54);
+    color: rgb(42, 151, 139);
     
     &:hover{
       border: 2px solid rgb(28, 54, 54);
