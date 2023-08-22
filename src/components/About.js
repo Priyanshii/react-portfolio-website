@@ -16,7 +16,7 @@ const About = () => {
               About Me
             </IntroTitle>
             <Content>
-              Experienced front-end developer specializing in React.js, with 1 year of
+              Experienced front-end developer specializing in React.js, with more than 1 year of
               dedicated experience in building dynamic and scalable web applications.
               Possesses a deep understanding of Javascript core concepts, React
               principles and best practices, including component-based architecture
@@ -55,6 +55,13 @@ const IntroductionContainer = styled.section`
   justify-content: flex-start;
   margin-left: auto;
   margin-bottom: 4rem;
+
+  @media screen and (max-width: 1000px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
 `
 
 const ImageContainer = styled.section`
@@ -62,22 +69,32 @@ const ImageContainer = styled.section`
   align-items: center;
   justify-content: center;
   width: 40%;
+  margin-bottom: 30px;
   img{
     height: auto;
     max-width: 100%;
     max-height: 350px;
     object-fit: contain;
     border-radius: 50%;
+    margin-bottom: 50px;
+  }
+
+  @media screen and (max-width: 1000px) {
+    width: 100%;
   }
 `
 
 const ContentContainer = styled.article`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-start;
   width: 50%;
   margin-left: auto;
+
+  @media screen and (max-width: 1000px) {
+    width: 100%;
+  }
 `
 
 const IntroTitle = styled.span`

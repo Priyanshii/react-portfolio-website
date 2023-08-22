@@ -58,7 +58,7 @@ const Nav = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 10;
   background-image: linear-gradient(180deg, rgb(26, 245, 225, 0.2), white);

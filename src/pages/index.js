@@ -16,7 +16,7 @@ const Pages = () => {
   }
 
   return (
-    <>
+    <div className='relative'>
       <Sidebar isOpen={isOpen} toggle={toggle}/>
       <Navbar toggle={toggle}/>
       <Routes>
@@ -24,7 +24,7 @@ const Pages = () => {
         <Route path="/experience" element={<ExperiencePage /> } />
         <Route path="/resume" element={<Resume /> } />
       </Routes>
-    </>
+    </div>
   )
 }
 

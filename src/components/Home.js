@@ -53,6 +53,13 @@ const HomeContainer = styled.div`
   align-items: flex-start;
   justify-content: space-between;
   flex-wrap: wrap;
+
+  @media screen and (max-width: 1000px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
 `
 
 const MainContent = styled.section`
@@ -61,9 +68,10 @@ const MainContent = styled.section`
   height: auto;
   margin-top: 40px; 
   padding-left: 40px;
-  /* @media screen and (max-width: 600px) {
-    flex: 100%;
-  } */
+  
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
 `
 
 const Introduction = styled.div`
@@ -115,7 +123,7 @@ const ProfileLinksMenu = styled.div`
 `
 
 const ImageContainer = styled.div`
-  /* width: 40%; */
+  width: 40%;
   /* width: 50%; */
   height: auto;
   margin-top: 20px;
@@ -126,15 +134,15 @@ const ImageContainer = styled.div`
 
   img{
     height: auto;
-    max-width: 80%;
-    max-height: 100%;
+    max-width: 100%;
+    max-height: 350px;
     object-fit: contain;
     border-radius: 50%;
   }
-/* 
-  @media screen and (max-width: 600px) {
-    flex: 100%;
-  } */
+
+  @media screen and (max-width: 1000px) {
+    display: none;
+  }
 `
 
 export default Home
