@@ -11,8 +11,8 @@ const projectList = [
   },
   {
     img: require('../assets/images/contact_app.png'),
-    demoLink: 'https://contact-management-app-phi.vercel.app/',
-    githubLink: 'https://github.com/Priyanshii/Contact-Management-App',
+    demoLink: 'https://contact-management-app-mern.vercel.app/',
+    githubLink: 'https://github.com/Priyanshii/Contact-Management-App-Mern',
     name: 'Contact Management App'
   }
 ];

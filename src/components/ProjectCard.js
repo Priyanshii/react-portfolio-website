@@ -19,12 +19,13 @@ const ProjectCard = ({img, demoLink, githubLink, name }) => {
 }
 
 const CardContainer = styled.div`
+  width: 400px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 `
 
 const ImageContainer = styled.div`
   img{
-    width: 400px;
+    width: 100%;
     height: auto;
     object-fit: contain;
     border-bottom: 1px solid #e1dcdc;
