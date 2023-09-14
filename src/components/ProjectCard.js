@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 
-const ProjectCard = ({img, demoLink, githubLink, name }) => {
+const ProjectCard = ({ img, demoLink, githubLink, name }) => {
   return (
     <>
       <CardContainer>
@@ -21,6 +21,10 @@ const ProjectCard = ({img, demoLink, githubLink, name }) => {
 const CardContainer = styled.div`
   width: 400px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  @media screen and (max-width: 500px) {
+   width: auto;
+  }
 `
 
 const ImageContainer = styled.div`
@@ -36,6 +40,7 @@ const NameContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   font-size: medium;
   margin-top: 20px;
   color: rgb(28, 54, 54);
@@ -52,6 +57,7 @@ const LinkContainer = styled.div`
     background-color: transparent;
     cursor: pointer;
     border: 2px solid transparent;
+    text-align: center;
     border-radius: 4px;
     padding: 5px 10px;
     text-decoration: none;

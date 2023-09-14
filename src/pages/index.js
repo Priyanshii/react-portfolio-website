@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
 import { Route, Routes } from 'react-router-dom';
-import About from '../components/About';
-import Home from '../components/Home';
 import Navbar from '../components/Navbar'
 import Resume from './Resume';
 import Sidebar from '../components/Sidebar'
 import LandingPage from './LandingPage';
 import ExperiencePage from './ExperiencePage';
+import styled from 'styled-components';
 
 const Pages = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,16 +15,21 @@ const Pages = () => {
   }
 
   return (
-    <div className='relative'>
-      <Sidebar isOpen={isOpen} toggle={toggle}/>
-      <Navbar toggle={toggle}/>
+    <MainContainer>
+      <Sidebar isOpen={isOpen} toggle={toggle} />
+      <Navbar toggle={toggle} />
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/experience" element={<ExperiencePage /> } />
-        <Route path="/resume" element={<Resume /> } />
+        <Route path="/experience" element={<ExperiencePage />} />
+        <Route path="/resume" element={<Resume />} />
       </Routes>
-    </div>
+    </MainContainer>
   )
 }
+
+const MainContainer = styled.div`
+  position: relative;
+  overflow-x: hidden;
+`
 
 export default Pages;

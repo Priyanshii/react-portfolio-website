@@ -56,10 +56,20 @@ const HomeContainer = styled.div`
   flex-wrap: wrap;
 
   @media screen and (max-width: 1000px) {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+  }
+
+  @media screen and (max-width: 500px) {
+    padding: 6rem 0rem 2rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 `
 
@@ -71,7 +81,10 @@ const MainContent = styled.section`
   padding-left: 40px;
   
   @media screen and (max-width: 600px) {
+    flex: 0;
+    margin-top: 0px;
     width: 100%;
+    height: 300px;
   }
 `
 

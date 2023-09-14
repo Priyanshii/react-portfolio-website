@@ -25,13 +25,13 @@ const ProjectsList = () => {
           Projects
         </Heading>
         <ProjectsListContainer>
-        {
-          projectList.map((card, index) => {
-            return(
-              <ProjectCard {...card} key={index}/>
-            )
-          })
-        }
+          {
+            projectList.map((card, index) => {
+              return (
+                <ProjectCard {...card} key={index} />
+              )
+            })
+          }
         </ProjectsListContainer>
       </ProjectsContainer>
     </>
@@ -62,6 +62,10 @@ const ProjectsListContainer = styled.div`
   justify-content: center;
   gap: 4rem;
   flex-wrap: wrap;
+
+  @media screen and (max-width: 500px) {
+   padding: 2rem 0rem 0rem;
+  }
 `
 
 export default ProjectsList

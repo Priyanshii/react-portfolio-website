@@ -10,12 +10,12 @@ import 'react-vertical-timeline-component/style.min.css';
 
 const workIcon = {
   icon: <MdBusinessCenter />,
-  iconStyle: { background: 'rgb(42, 151, 139)', color: '#fff'},
+  iconStyle: { background: 'rgb(42, 151, 139)', color: '#fff' },
 };
 
 const starIcon = {
   icon: <AiFillStar />,
-  iconStyle: { background: '#bb3459', color: '#fff'},
+  iconStyle: { background: '#bb3459', color: '#fff' },
 };
 
 const timeline = [
@@ -47,46 +47,46 @@ const WorkExperience = () => {
         <MainContainer>
           <VerticalTimeline lineColor='rgb(42, 151, 139)' layout='2-columns'>
             {
-            timeline.map((t, i) => {
-              const contentStyle = i !== timeline.length-1 ? { border: '2px solid rgb(42, 151, 139)', color: 'rgb(28, 54, 54)' } : undefined;
-              const arrowStyle = i!== timeline.length-1 ? { borderRight: '7px solid rgb(42, 151, 139)' } : undefined;
+              timeline.map((t, i) => {
+                const contentStyle = i !== timeline.length - 1 ? { border: '2px solid rgb(42, 151, 139)', color: 'rgb(28, 54, 54)' } : undefined;
+                const arrowStyle = i !== timeline.length - 1 ? { borderRight: '7px solid rgb(42, 151, 139)' } : undefined;
 
-              return (
-                <VerticalTimelineElement
-                  key={i}
-                  className="vertical-timeline-element--work"
-                  contentStyle={contentStyle}
-                  contentArrowStyle={arrowStyle}
-                  // date={t.date}
-                  {...t.icon}
-                >
-                  {t.title ? (
-                    <React.Fragment>
-                      <Title className="vertical-timeline-element-title">{t.title}</Title>
-                      {t.subtitle && (
-                        <Subtitle>
-                          {t.subtitle}
-                        </Subtitle>
-                      )}
-                      {
-                      t.desc
-                      && 
-                      <Tags>
-                      {
-                      t.desc.map((item, index) => {
-                        return(
-                          <div key={index}>{item}</div>
-                          )
-                        })
-                      }
-                      </Tags>
-                      }
-                      {t.date && <Date>{t.date}</Date>}
-                    </React.Fragment>
-                  ) : undefined}
-                </VerticalTimelineElement>
-              );
-            })}
+                return (
+                  <VerticalTimelineElement
+                    key={i}
+                    className="vertical-timeline-element--work"
+                    contentStyle={contentStyle}
+                    contentArrowStyle={arrowStyle}
+                    // date={t.date}
+                    {...t.icon}
+                  >
+                    {t.title ? (
+                      <React.Fragment>
+                        <Title className="vertical-timeline-element-title">{t.title}</Title>
+                        {t.subtitle && (
+                          <Subtitle>
+                            {t.subtitle}
+                          </Subtitle>
+                        )}
+                        {
+                          t.desc
+                          &&
+                          <Tags>
+                            {
+                              t.desc.map((item, index) => {
+                                return (
+                                  <div key={index}>{item}</div>
+                                )
+                              })
+                            }
+                          </Tags>
+                        }
+                        {t.date && <Date>{t.date}</Date>}
+                      </React.Fragment>
+                    ) : undefined}
+                  </VerticalTimelineElement>
+                );
+              })}
           </VerticalTimeline>
         </MainContainer>
       </WorkExperienceContainer>
@@ -147,4 +147,5 @@ const Date = styled.div`
   font-weight: 500;
   margin-top: 20px;
 `
+
 export default WorkExperience

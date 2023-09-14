@@ -4,6 +4,7 @@ import { Document, Page, pdfjs } from 'react-pdf';
 import pdf from '../assets/doc/Resume_Priyanshi_Maheshwari.pdf';
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "react-pdf/dist/esm/Page/TextLayer.css";
+import '../index.css'
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 const Resume = () => {
@@ -13,7 +14,7 @@ const Resume = () => {
       <ResumeContainer>
         <FileContainer>
           <DocumentRender file={pdf}>
-            <Page pageNumber={1}  />
+            <Page pageNumber={1} />
           </DocumentRender>
         </FileContainer>
         <DownloadButton href={pdf} download="Priyanshi_Maheshwari_Resume.pdf">
@@ -32,6 +33,9 @@ const ResumeContainer = styled.div`
 `
 
 const FileContainer = styled.div`
+  @media screen and (max-width: 600px) {
+   margin-top: 160px;
+  }
 `
 
 const DocumentRender = styled(Document)`

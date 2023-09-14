@@ -24,9 +24,9 @@ const About = () => {
               creating intuitive user interfaces that enhance user experiences.
             </Content>
             <ExtraInfo>
-              Email :   
-              <EmailID onClick={() => {window.location.href ='mailto:priyanshimaheshwari2015@gmail.com';}}>
-              {` priyanshimaheshwari2015@gmail.com`}
+              Email :
+              <EmailID onClick={() => { window.location.href = 'mailto:priyanshimaheshwari2015@gmail.com'; }}>
+                {` priyanshimaheshwari2015@gmail.com`}
               </EmailID>
             </ExtraInfo>
           </ContentContainer>
@@ -46,6 +46,15 @@ const AboutContainer = styled.div`
   justify-content: flex-start;
   gap: 2rem;
   padding: 2rem 6rem;
+
+  @media screen and (max-width: 500px) {
+    padding: 2rem 0rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
 `
 
 const IntroductionContainer = styled.section`
@@ -70,6 +79,7 @@ const ImageContainer = styled.section`
   justify-content: center;
   width: 40%;
   margin-bottom: 30px;
+
   img{
     height: auto;
     max-width: 100%;
@@ -81,6 +91,18 @@ const ImageContainer = styled.section`
 
   @media screen and (max-width: 1000px) {
     width: 100%;
+
+    img{
+      margin-bottom: 0px;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    width: 70%;
+
+    img{
+      margin-bottom: 0px;
+    }
   }
 `
 
@@ -94,6 +116,11 @@ const ContentContainer = styled.article`
 
   @media screen and (max-width: 1000px) {
     width: 100%;
+  }
+
+  @media screen and (max-width: 500px) {
+    padding: 20px;
+    width: auto;
   }
 `
 
